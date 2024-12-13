@@ -14,8 +14,8 @@ class Article(models.Model):
     status = models.CharField(max_length=20, 
                                 choices=(
                                   ("draft", "Draft"),
-                                  ("in progress", "in progress"), 
-                                  ("published", "published"),
+                                  ("in progress", "In progress"), 
+                                  ("published", "Published"),
                                     ),
                                 default="draft"
                             )
