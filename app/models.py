@@ -7,16 +7,20 @@ class UserProfile(AbstractUser):
     pass
 
 class Article(models.Model):
+
+    ARTICLE_STATUS = (
+        ("draft", "Draft"),
+        ("in progress", "In progress"), 
+        ("published", "Published"),
+    )
+                                  
+                                    
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True, default="")
     word_count = models.IntegerField()
     twitter_post = models.TextField(blank=True, default="")
     status = models.CharField(max_length=20, 
-                                choices=(
-                                  ("draft", "Draft"),
-                                  ("in progress", "In progress"), 
-                                  ("published", "Published"),
-                                    ),
+                                choices=ARTICLE_STATUS,
                                 default="draft"
                             )
     created_at = models.DateTimeField(auto_now_add=True)
