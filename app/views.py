@@ -7,14 +7,14 @@ from django.urls import reverse_lazy
 
 class ArticleListView(ListView):
     model = Article
-    template_name = "app/article_list.html"
+    template_name = "app/home.html"
 
 
 class ArticleCreateView(CreateView):
     model = Article
     fields = "__all__"
     success_url = reverse_lazy("home")
-    template_name = "app/home.html"
+    template_name = "app/article_create.html"
 
 
 class ArticleDetailView(DetailView):
