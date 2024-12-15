@@ -8,5 +8,5 @@ class ArticleCreateView(CreateView):
     model = Article
     fields = "__all__"
     success_url = "home"
-    template_name = "article_create.html"
+    template_name = "app/article_create.html"
 
