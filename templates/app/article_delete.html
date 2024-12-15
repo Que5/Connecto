@@ -6,6 +6,12 @@
     <title>Delete</title>
 </head>
 <body>
+    <h3>Delete Article</h3>
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete {{article.title}}?</p>
+        <button type="submit">Confirm</button>
+    </form>
     
 </body>
 </html>
