@@ -7,6 +7,6 @@ from django.urls import reverse_lazy
 class ArticleCreateView(CreateView):
     model = Article
     fields = "__all__"
-    success_url = "home"
+    success_url = reverse_lazy("home")
     template_name = "app/article_create.html"
 
