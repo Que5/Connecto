@@ -29,7 +29,7 @@ class ArticleUpdateView(UpdateView):
     success_url = reverse_lazy("home")
 
 
-class ArticleDelete(DetailView):
+class ArticleDeleteView(DetailView):
     model = Article
     template_name = "app/article_delete.html"
     success_url = reverse_lazy("home")
