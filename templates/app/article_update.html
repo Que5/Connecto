@@ -9,5 +9,5 @@
         <button type="submit">Edit</button>
     </form>
     <a href="{% url 'home' %}">Back to list</a>
-    <a href="{% url 'article_delete' article.id %}">Delete Article</a>
+    <a href="{% url 'article_delete' article.pk %}">Delete Article</a>
 {% endblock content %}
