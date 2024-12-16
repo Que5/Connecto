@@ -5,7 +5,7 @@
     <a href="{% url 'create_article' %}">New Article </a>
     <ul>
         {% for article in article_list %}
-            <li>{{ article.title }} with {{ article.word_count }} words.</li>
+            <li><a href="{% url 'update_article' article.id %}"></a>{{ article.title }} with {{ article.word_count }} words.</li>
         {% endfor %}
     </ul>   
 {% endblock content %}
