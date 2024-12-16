@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Article</title>
-</head>
-<body>
+{% extends 'app/base.html' %}
+
+{% block content %}
     <h3>Create Article</h3>
     <div>
         <form method="post">
@@ -14,6 +9,4 @@
             <button type="submit">Create</button>
         </form>
     </div>
-    
-</body>
-</html>
+{% endblock content %}
