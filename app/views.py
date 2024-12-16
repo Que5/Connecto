@@ -12,7 +12,7 @@ class ArticleListView(ListView):
 
 class ArticleCreateView(CreateView):
     model = Article
-    fields = "__all__"
+    fields = ["title", "status", "content", "twitter_post"]
     success_url = reverse_lazy("home")
     template_name = "app/article_create.html"
 
@@ -24,7 +24,7 @@ class ArticleDetailView(DetailView):
 
 class ArticleUpdateView(UpdateView):
     model = Article
-    fields = "__all__"
+    fields = ["title", "status", "content", "twitter_post"]
     template_name = "app/article_update.html"
     success_url = reverse_lazy("home")
 
