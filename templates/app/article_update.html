@@ -1,16 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Update</title>
-</head>
-<body>
+{% extends 'app/base.html' %}
+
+{% block content %}
     <h3>Article Edit</h3>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Edit</button>
     </form>
-</body>
-</html>
+{% endblock content %}
