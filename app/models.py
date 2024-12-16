@@ -1,3 +1,4 @@
+import re
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 
@@ -13,8 +14,7 @@ class Article(models.Model):
         ("in progress", "In progress"), 
         ("published", "Published"),
     )
-                                  
-                                    
+                                                                    
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True, default="")
     word_count = models.IntegerField()
@@ -29,3 +29,7 @@ class Article(models.Model):
     def __str__(self):
         return self.title
 
+    def save(self, *args, **kwargs):
+        text = re.sub(r"<[^>]*>","", self.content).replace("&nbsp;", " ")
+        self.word_count = len(re.findall(r"\b\w+\b", text))
+        super().save(*args, **kwargs)
