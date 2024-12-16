@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Delete</title>
-</head>
-<body>
+{% extends 'app/base.html' %}
+
+{% block content %}
     <h3>Delete Article</h3>
     <form method="post">
         {% csrf_token %}
         <p>Are you sure you want to delete {{article.title}}?</p>
         <button type="submit">Confirm</button>
     </form>
+{% block content %}
     
-</body>
-</html>
