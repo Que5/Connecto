@@ -27,14 +27,14 @@ class ArticleDetailView(LoginRequiredMixin, DetailView):
     template_name = "app/article_detail.html"
 
 
-class ArticleUpdateView(LoginRequiredMixin, UpdateView):
+class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     model = Article
     fields = ["title", "status", "content", "twitter_post"]
     template_name = "app/article_update.html"
     success_url = reverse_lazy("home")
 
 
-class ArticleDeleteView(LoginRequiredMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = "app/article_delete.html"
     success_url = reverse_lazy("home")
