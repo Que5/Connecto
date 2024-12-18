@@ -35,7 +35,7 @@ AUTHENTICATION_BACKENDS = [
 
 # Application definition
 
-INSTALLED_APPS = [
+DJANGO_APPS = [
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
 ]
 
-THIRD_PARTY_APP = [
+THIRD_PARTY_APPS = [
     "allauth",
     "allauth.account",
 ]
@@ -52,6 +52,8 @@ THIRD_PARTY_APP = [
 PROJECT_APPS = [
     "app.apps.Appconfig",
 ]
+
+INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
 
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
