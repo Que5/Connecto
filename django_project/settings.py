@@ -50,7 +50,7 @@ THIRD_PARTY_APPS = [
 ]
 
 PROJECT_APPS = [
-    "app.apps.Appconfig",
+    "app.apps.AppConfig",
 ]
 
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + PROJECT_APPS
@@ -66,10 +66,6 @@ MIDDLEWARE = [
     "allauth.account.middleware.AccountMiddleware",
 ]
 
-if DEBUG:
-    INSTALLED_APPS += [
-        "debug_toolbar"
-    ] 
 
 ROOT_URLCONF = "django_project.urls"
 

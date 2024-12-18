@@ -24,6 +24,5 @@ urlpatterns = [
     path("articles/", include("app.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", RedirectView.as_view(pattern_name="home")),
-    path("__debug__/", include("debug_toolbar.urls")),
 
 ]
