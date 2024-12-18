@@ -28,6 +28,10 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = []
 
+AUTHENTICATION_BACKENDS = [
+    "allauth.account.auth_backends.AuthenticationBackend"
+]
+
 
 # Application definition
 
@@ -38,8 +42,15 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # Local app
-    "app",
+]
+
+THIRD_PARTY_APP = [
+    "allauth",
+    "allauth.account",
+]
+
+PROJECT_APPS = [
+    "app.apps.Appconfig",
 ]
 
 MIDDLEWARE = [
