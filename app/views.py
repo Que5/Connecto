@@ -11,7 +11,10 @@ class ArticleListView(ListView):
     template_name = "app/home.html"
 
     # def get_queryset(self):
-    #     return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+    #     if self.request.user.is_authenticated:
+    #         return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+    #     else:
+    #         return Article.objects.none()
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
