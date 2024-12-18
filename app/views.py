@@ -16,6 +16,10 @@ class ArticleCreateView(CreateView):
     success_url = reverse_lazy("home")
     template_name = "app/article_create.html"
 
+    def form_valid(self, form):
+        form.instance.creator = self.request.user
+        return super().form_valid(form)
+
 
 class ArticleDetailView(DetailView):
     model = Article
