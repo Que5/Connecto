@@ -33,11 +33,17 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
     template_name = "app/article_update.html"
     success_url = reverse_lazy("home")
 
+    def test_func(self):
+        return self.request.user == self.get_object().creator
+
 
 class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = "app/article_delete.html"
     success_url = reverse_lazy("home")
+
+    def test_func(self):
+        return self.request.user == self.get_object().creator
 
 
 
