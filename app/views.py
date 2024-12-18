@@ -10,8 +10,8 @@ class ArticleListView(ListView):
     model = Article
     template_name = "app/home.html"
 
-    def get_queryset(self):
-        return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+    # def get_queryset(self):
+    #     return Article.objects.filter(creator=self.request.user).order_by("-created_at")
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
