@@ -11,6 +11,12 @@ class ArticleAdmin(admin.ModelAdmin):
     ordering =["created_at"]
     readonly_fields = ["word_count", "created_at", "updated_at"]
 
+class CustomUserAdmin(UserAdmin):
+    list_display = ("email", "is_staff", "is_active")
+    list_filter = ("is_staff", "is_active")
+    search_fields = ("email",)
+    ordering = ("email",)
 
-admin.site.register(UserProfile)
+
+admin.site.register(UserProfile, CustomUserAdmin)
 admin.site.register(Article, ArticleAdmin)
