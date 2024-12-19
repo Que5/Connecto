@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.auth.admin import UserAdmin
 from .models import UserProfile, Article
 
 # Register your models here.
@@ -12,4 +13,4 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 admin.site.register(UserProfile)
-admin.site.register(Article)
+admin.site.register(Article, ArticleAdmin)
