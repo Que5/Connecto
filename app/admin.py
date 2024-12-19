@@ -12,6 +12,12 @@ class ArticleAdmin(admin.ModelAdmin):
     readonly_fields = ["word_count", "created_at", "updated_at"]
 
 class CustomUserAdmin(UserAdmin):
+    fieldsets = (
+        (None, {"fields": ("email", "password")}),
+        ("Personal info", {"fields": ("first_name", "last_name")}),
+        ("Permisions", {"fields": ("is_active", "is_staff", "is_superuser", "groups", "user_permissions")})
+    )
+
     list_display = ("email", "is_staff", "is_active")
     list_filter = ("is_staff", "is_active")
     search_fields = ("email",)
