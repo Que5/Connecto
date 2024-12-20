@@ -2,6 +2,7 @@
 
 {% block content %}
     <h1>Articles</h1>
+    <p> You have created {{ user.article_count }} articles and written {{ user.written_words }} words.</p>
     {% if article_list %}
     <a href="{% url 'article_create' %}">New Article </a>
     <ul>
