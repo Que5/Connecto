@@ -4,21 +4,24 @@ from django.db import models
 from django.conf import settings
 from django.contrib.auth.models import AbstractUser
 
+from app.managers import UserProfileManager
+
 # Create your models here.
 
-class UserProfile(AbstractUser):
-    email = models.EmailField(max_length=255, unique=True)
-    USERNAME_FIELD = "email"
-    REQUIRED_FIELDS = []
-
-class Article(models.Model):
-
-    ARTICLE_STATUS = (
+ARTICLE_STATUS = (
         ("draft", "Draft"),
         ("in progress", "In progress"), 
         ("published", "Published"),
     )
-                                                                    
+
+class UserProfile(AbstractUser):
+    email = models.EmailField(max_length=255, unique=True)
+
+    objects = UserProfileManager()
+    USERNAME_FIELD = "email"
+    REQUIRED_FIELDS = []
+
+class Article(models.Model):                                                               
     title = models.CharField(max_length=100)
     content = models.TextField(blank=True, default="")
     word_count = models.IntegerField(blank=True, default="")
