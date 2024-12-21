@@ -9,5 +9,16 @@
             <button type="submit">Create</button>
         </form>
         <a href="{% url 'home' %}">Back to list</a>
+        {% block page_js %}
+        <sript>
+           const contentMarkdown = new EasyMDE({
+            element: document.getElementById("id_content"),
+            spellChecker: false,
+            status: false,
+            toolbar: false,
+            forceSync: true
+           });
+        </sript>
+        {% endblock page_js %}
     </div>
 {% endblock content %}
