@@ -1,3 +1,4 @@
+<!-- In your article creation template -->
 {% extends 'app/base.html' %}
 
 {% block content %}
@@ -9,18 +10,17 @@
             <button type="submit">Create</button>
         </form>
         <a href="{% url 'home' %}">Back to list</a>
-
     </div>
-    {% endblock content %}
+{% endblock content %}
 
-    {% block page_js %}
-        <sript>
-           const contentMarkdown = new EasyMDE({
-            element: document.getElementById("id_content"),
-            spellChecker: false,
-            status: false,
-            toolbar: false,
-            forceSync: true
-           });
-        </sript>
-     {% endblock page_js %}
+{% block page_js %}
+<script>
+   const contentMarkdown = new EasyMDE({
+    element: document.getElementById('id_content'),
+    spellChecker: false,
+    status: false,
+    toolbar: false,
+    forceSync: true
+   });
+</script>
+{% endblock page_js %}
