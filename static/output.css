@@ -562,6 +562,22 @@ video {
   display: block;
 }
 
+.flex {
+  display: flex;
+}
+
+.items-center {
+  align-items: center;
+}
+
+.justify-end {
+  justify-content: flex-end;
+}
+
+.gap-6 {
+  gap: 1.5rem;
+}
+
 .border-b {
   border-bottom-width: 1px;
 }
@@ -683,4 +699,8 @@ video {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(254 202 202 / var(--tw-ring-opacity, 1));
   --tw-ring-offset-width: 2px;
+}
+
+.hover\:underline:hover {
+  text-decoration-line: underline;
 }
