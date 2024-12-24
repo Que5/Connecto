@@ -18,9 +18,11 @@
         <div>
             <a href="{% url 'home' %}">Home</a></li>
                 {% if user.is_authenticated %}
+                <a class="" href="{% url 'article_create' %}">Create Article</a>
+                <a class="" href="{% url 'account_email' %}">Change email</a>
                 <form method="POST" action="{% url 'account_logout' %}">
                     {% csrf_token %}
-                    <button class="button" type="submit">Logout</button>
+                    <button class="" type="submit">Logout</button>
                 </form>
                 {% else %}
                 <a class="button secondary text-sm" href="{% url 'account_login' %}">Login</a>
