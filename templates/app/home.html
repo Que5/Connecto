@@ -2,10 +2,15 @@
 {% load humanize %}
 
 {% block content %}
-    <h1 class="text-6xl font-semibold">Welcome</h1>
-    <p> You have created {{ user.article_count | intcomma }} article{{ user.article_count | pluralize }} and written {{ user.written_words | intcomma }} word{{ user.written_words | pluralize}}.</p>
+    <h1 class="title mb-4">Welcome</h1>
+
+    <p class="text-x1 mb-4"> You have created {{ user.article_count | intcomma }} 
+        article{{ user.article_count | pluralize }} and written {{ user.written_words | intcomma }} 
+        word{{ user.written_words | pluralize}}.
+    </p>
+
     {% if article_list %}
-    <a href="{% url 'article_create' %}">New Article </a>
+    <a class="button primary" href="{% url 'article_create' %}">New Article </a>
     <ul>
         {% for article in article_list %}
             <li><a href="{% url 'article_update' article.pk %}">{{ article.title }} with {{ article.word_count }} words.</a></li>
