@@ -6,6 +6,10 @@
     @apply text-6xl font-semibold tracking-tight;
 }
 
+.subtitle {
+    @apply text-4xl font-medium tracking-tight;
+}
+
 .button {
     @apply font-medium px-4 py-2 rounded-md;
 }
