@@ -14,13 +14,16 @@
 </head>
 
 <body>
+    {% url 'article_create' as create_new_url %}
+    {% url 'home' as your_articles_url %}
+    {% url 'account_email' as change_email_url %}
     <nav class="px-10 py-4 border-b border-gray-300 shadow-md">
         <div class="flex justify-end items-center gap-6 max-w-7xl mx-auto">
             
                 {% if user.is_authenticated %}
-                <a class="button primary" href="{% url 'article_create' %}">Create New</a>
-                <a class="hover:shadow-underline" href="{% url 'home' %}">Articles</a>
-                <a class="hover:shadow-underline" href="{% url 'account_email' %}">Change email</a>
+                <a class="button primary" href="{{ create_new_url }}">Create New</a>
+                <a class="hover:shadow-underline hover:shadow-gray-300" href="{{ your_articles_url }}">Articles</a>
+                <a class="hover:shadow-underline hover:shadow-gray-300" href="{{ change_email_url }}">Change email</a>
                 <form method="POST" action="{% url 'account_logout' %}">
                     {% csrf_token %}
                     <button class="" type="submit">Logout</button>
