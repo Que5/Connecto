@@ -8,7 +8,7 @@
     <form method="post" class="flex items-center gap-4">
         {% csrf_token %}
         <button type="submit" class="button danger">Confirm</button>
-        <a href="{% url 'home' %}" class="button secondary">No, take me back</a>
+        <a href="{% url 'home' %}" class="button secondary">{% include "svgs/arrow-left.svg" %}No, take me back</a>
     </form>
 </main>
 {% endblock content %}
