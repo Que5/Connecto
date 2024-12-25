@@ -4,12 +4,8 @@
     <h3>Article Edit</h3>
     <p>{{ article.word_count }} word{{ article.word_count | pluralize }}</p>
     <p>Last edited on {{ article.updated_at | date:"JS F Y" }}</p>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Edit</button>
-    </form>
-    <a href="{% url 'home' %}">Back to list</a>
+    
+    
     <a href="{% url 'article_delete' article.pk %}">Delete Article</a>
 {% endblock content %}
 
