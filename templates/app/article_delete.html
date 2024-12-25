@@ -1,12 +1,14 @@
 {% extends 'app/base.html' %}
 
 {% block content %}
-    <h3>Delete Article</h3>
-    <form method="post">
+<main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
+    <h1 class="subtitle mb-2">Delete Article</h1>
+    <p class="text-lg mb-6">Are you sure you want to delete "{{article.title}}"?</p>
+
+    <form method="post" class="flex items-center gap-4">
         {% csrf_token %}
-        <p>Are you sure you want to delete {{article.title}}?</p>
-        <button type="submit">Confirm</button>
+        <button class="button danger" type="submit">Confirm</button>
+        <a class="button secondary" href="{% url 'home' %}">No, take me back</a>
     </form>
-    <a href="{% url 'home' %}">No, take me back</a>
-{% block content %}
-    
+</main>
+{% endblock content %}
