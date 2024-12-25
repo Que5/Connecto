@@ -13,6 +13,7 @@
     <a class="button primary inline-block mb-6 w-full sm:w-auto text-center" href="{% url 'article_create' %}">New Article </a>
 
     <h2 class="subtitle mb-6">Your latest articles</h2>
+    
     <ul>
         {% for article in article_list %}
             <li><a href="{% url 'article_update' article.pk %}">{{ article.title }} with {{ article.word_count }} words.</a></li>

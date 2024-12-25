@@ -567,12 +567,24 @@ video {
   margin-bottom: 1rem;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
 .block {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
 .flex {
   display: flex;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .max-w-7xl {
@@ -610,6 +622,10 @@ video {
   padding-bottom: 1rem;
 }
 
+.text-center {
+  text-align: center;
+}
+
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
@@ -629,6 +645,13 @@ video {
   font-size: 3.75rem;
   line-height: 1;
   font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.subtitle {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 500;
   letter-spacing: -0.025em;
 }
 
@@ -734,4 +757,10 @@ video {
 .hover\:shadow-gray-300:hover {
   --tw-shadow-color: #d1d5db;
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+@media (min-width: 640px) {
+  .sm\:w-auto {
+    width: auto;
+  }
 }
