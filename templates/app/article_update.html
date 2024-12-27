@@ -6,7 +6,7 @@
 {% endblock article_stats %}   
 
 {% block buttons %}
-    <a href="{% url 'article_delete' article.pk %}">Delete Article</a>
-    <button type="submit">Save</button>
+    <a href="{% url 'article_delete' article.pk %}" class="button danger">Delete Article</a>
+    <button type="submit" class="button primary">Save</button>
 {% endblock buttons %}
 
