@@ -1,8 +1,8 @@
 {% extends 'app/layouts/base_form.html' %}
 
 {% block article_stats %}
-    <p>{{ article.word_count }} word{{ article.word_count | pluralize }}</p>
-    <p>Last edited on {{ article.updated_at | date:"JS F Y" }}</p>
+    <p>{{ article.word_count }} word{{ article.word_count | pluralize }}.</p>
+    <p>Last edited on <span class="font-bold">{{ article.updated_at | date:"jS F Y" }}</span></p>
 {% endblock article_stats %}   
 
 {% block buttons %}

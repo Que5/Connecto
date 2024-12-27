@@ -9,13 +9,15 @@
 
       {% render_field form.title class="text-4xl w-full rounded-md border-2 border-gray-200 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Write a title for your article" %}
 
-      {% block article_stats %}
+      <div class="flex gap-10 mb-10 items-center">
+         {% render_field form.status class="text-xs border-none rounded-sm uppercase" %}
 
-      {% endblock article_stats %}
+         {% block article_stats %}
 
-      {% render_field form.status %}
+         {% endblock article_stats %}
+      </div>
 
-      {% render_field form.content %}
+      {% render_field form.content rows=20%}
 
       {% render_field form.twitter_post %}
 
