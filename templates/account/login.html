@@ -34,7 +34,20 @@
                     {% render_field form.password class="block text-black shadow-sm focus:ring-emerald-500 focus:border-emerald-500 border-gray-300 text-sm" %}
                 </div>
             </div>
-        </form>
+
+            <div class="flex items-center">
+                {% render_field form.remember class="focus:ring-emerald-500 h-4 w-4 text-emerald-600 border-gray-300 rounded" %}
+                <label class="ml-3 text-sm" for="{{ form.remember.id_for_label }}">
+                    {{ form.remember.label }}
+                </label>
+            </div>
+
+            <button type="submit" class="button primary w-full text-sm">Sign in</button>
+
+            {% if SOCIALACCOUNT_ENABLED %}
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            {% endif %}
+        </form> 
     </div>
 </main>
 {% endblock content %}
