@@ -1,11 +1,12 @@
 {% extends 'app/layouts/base_form.html' %}
 
-{% block content %}
-    
+{% block article_stats %}
     <p>{{ article.word_count }} word{{ article.word_count | pluralize }}</p>
     <p>Last edited on {{ article.updated_at | date:"JS F Y" }}</p>
-    
-    
+{% endblock article_stats %}   
+
+{% block buttons %}
     <a href="{% url 'article_delete' article.pk %}">Delete Article</a>
-{% endblock content %}
+    <button type="submit">Save</button>
+{% endblock buttons %}
 

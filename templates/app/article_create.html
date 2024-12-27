@@ -1,14 +1,5 @@
 {% extends 'app/layouts/base_form.html' %}
 
-{% block content %}
-    
-    <div>
-        <form method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <button type="submit">Create</button>
-        </form>
-        <a href="{% url 'home' %}">Back to list</a>
-    </div>
-{% endblock content %}
-
+{% block buttons %}
+<button type="submit">Create</button>
+{% endblock buttons %}
