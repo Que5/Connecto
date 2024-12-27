@@ -6,7 +6,9 @@
 {% endblock article_stats %}   
 
 {% block buttons %}
+<div class="flex justify-end gap-4">
     <a href="{% url 'article_delete' article.pk %}" class="button danger">Delete Article</a>
     <button type="submit" class="button primary">Save</button>
+</div>
 {% endblock buttons %}
 
