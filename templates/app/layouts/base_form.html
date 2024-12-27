@@ -3,25 +3,27 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<form method="post">
-   {% csrf_token %}
+<main class="max-w-7xl mx-auto mt-10">
+   <form method="post">
+      {% csrf_token %}
 
-   {% render_field form.title %}
+      {% render_field form.title class="text-4xl w-full rounded-md border-2 border-gray-200 focus:ring-1 focus:ring-emerald-500 focus:border-emerald-500" placeholder="Write a title for your article" %}
 
-   {% block article_stats %}
+      {% block article_stats %}
 
-   {% endblock article_stats %}
+      {% endblock article_stats %}
 
-   {% render_field form.status %}
+      {% render_field form.status %}
 
-   {% render_field form.content %}
+      {% render_field form.content %}
 
-   {% render_field form.twitter_post %}
+      {% render_field form.twitter_post %}
 
-   {% block buttons %}
+      {% block buttons %}
 
-   {% endblock buttons %}
-</form>
+      {% endblock buttons %}
+   </form>
+</main>
 {% endblock content %}
 
 {% block page_js %}
