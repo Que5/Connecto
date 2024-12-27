@@ -5,7 +5,9 @@
 {% block content %}
 <form method="post">
    {% csrf_token %}
-   {{ form.as_p }}
+
+   {% render_field %}
+
    {% block buttons %}
 
    {% endblock buttons %}
