@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content %}
+{% block base_content %}
 <main class="max-w-2xl mx-auto flex flex-col items-center mt-10">
     <h1 class="subtitle mb-2">Delete Article</h1>
     <p class="text-lg mb-6">Are you sure you want to delete "{{article.title}}"?</p>
@@ -11,4 +11,4 @@
         <a href="{% url 'home' %}" class="button secondary">{% include "svgs/arrow-left.svg" with class="inline-block w-6 h-6 mr-2 mt-[-2px]" %}No, take me back</a>
     </form>
 </main>
-{% endblock content %}
+{% endblock base_content %}
