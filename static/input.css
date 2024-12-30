@@ -50,3 +50,7 @@
 details > summary::-webkit-details-marker {
     display: none;
 }
+
+input[type="radio"] {
+    @apply text-emerald-600 ml-1 h-4 w-4 focus:ring-emerald-500;
+}
