@@ -39,12 +39,12 @@
                                     {% render_field form.password1 class="block text-black shadow-sm focus:ring-emerald-500
                                     focus:border-emerald-500 border-gray-300 text-sm" %}
                                 </div>
-                                <details>
-                                    <summary>
+                                <details class="text-sm rounded-md border border-gray-700 [&_svg]:open:rotate-90">
+                                    <summary class="px-2 py-1 flex justify-between items-center list-none cursor-pointer bg-gray-700">
                                         <div>Password requirements</div>
-                                        <span>{% include "svgs/chevron.svg" eith class="w-3 h-3" %}</span>
+                                        <span>{% include "svgs/chevron.svg" eith class="w-5 h-5" %}</span>
                                     </summary>
-                                    <div>{{ form.password1.help_text | safe }}</div>
+                                    <div class="px-2 py-1 mt-2 min-w-full [&>ul]:space-y-1 w-0">{{ form.password1.help_text | safe }}</div>
                                 </details>
                             </div>
                             
