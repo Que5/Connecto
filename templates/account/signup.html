@@ -34,6 +34,10 @@
                                     focus:border-emerald-500 border-gray-300 text-sm" %}
                                 </div>
                                 {% if form.password1.errors %}
+                                    <div class="error [&>ul]:space-y-2">
+                                        {{ form.password1.errors }}
+                                    </div>
+                                {% endif %}
                             </div>
                             <div>
                                 <label class="sr-only" for="{{ form.password2.id_for_label }}">Email</label>
