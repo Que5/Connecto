@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    {% block body%}
     {% url 'article_create' as create_new_url %}
     {% url 'home' as your_articles_url %}
     {% url 'account_email' as change_email_url %}
@@ -53,6 +54,7 @@
 
         {% endblock base_content %}
     </div>
+    {% endblock body %}
     {% block extra_body %}
     {% endblock extra_body %}
 
