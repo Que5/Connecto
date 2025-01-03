@@ -66,3 +66,6 @@ input[type="radio"] {
 .allauth-form p:has(input[type="email"]) label {
     @apply font-bold;
 }
+.article-status-draft {
+    @apply bg-gray-200;
+}
