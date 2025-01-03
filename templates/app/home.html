@@ -23,7 +23,8 @@
     <ul>
         {% for article in article_list %}
             <li>
-                <a class="text-2xl flex items-center" href="{% url 'article_update' article.pk %}">{{ article.title }} <span class="ml-2 px-4 py-0.5 text-xs rounded-sm uppercase bg-gray-200">{{ article.status }}</span>
+                <a class="text-2xl flex items-center" href="{% url 'article_update' article.pk %}">{{ article.title }} 
+                    <span class="ml-2 px-4 py-0.5 text-xs rounded-sm uppercase article-status-{{article.status}}">{{ article.status }}</span>
                 </a>
                 <p class="text">{{ article.word_count }} word{{ article.word_count | pluralize }}</p> 
             </li>
