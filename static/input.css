@@ -69,3 +69,7 @@ input[type="radio"] {
 .article-status-draft {
     @apply bg-gray-200;
 }
+
+.article-status-published {
+    @apply bg-green-200; 
+}
