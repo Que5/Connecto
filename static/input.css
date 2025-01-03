@@ -73,3 +73,7 @@ input[type="radio"] {
 .article-status-published {
     @apply bg-green-200; 
 }
+
+.article-status-inprogress {
+    @apply bg-amber-200;
+}
