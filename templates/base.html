@@ -51,6 +51,12 @@
         </div>
     </nav>
     <div class="p-2 md:p-4 lg:p-6">
+        {% if messages %}
+            {% for message in messages%}
+                {% message %}
+            {% endfor %}
+        {% endif %}
+        
         {% block base_content %}
 
         {% endblock base_content %}
