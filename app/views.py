@@ -1,4 +1,7 @@
-from django.contrib.messages.views import SuccessMessageMixin
+from typing import Any
+
+from django.contrib import messages
+from django.http import HttpRequest, HttpResponse
 from .models import Article
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy 
@@ -43,14 +46,18 @@ class ArticleUpdateView(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == self.get_object().creator
 
 
-class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, SuccessMessageMixin, DeleteView):
+class ArticleDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
     model = Article
     template_name = "app/article_delete.html"
     success_url = reverse_lazy("home")
-    success_message = "Article deleted successfully."
+   
 
     def test_func(self):
         return self.request.user == self.get_object().creator
+    
+    def post(self, request:HttpRequest, *args: str, **kwargs: Any) -> HttpResponse:
+        messages.success(request, "Article deleted successfully.", extra_tags="destructive") 
+        return super().post(request, *args, **kwargs)
 
 
 
