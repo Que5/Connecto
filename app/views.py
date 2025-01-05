@@ -12,12 +12,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
 class ArticleListView(ListView):
     model = Article
     template_name = "app/home.html"
+    paginate_by = 5
 
-    # def get_queryset(self):
-    #     if self.request.user.is_authenticated:
-    #         return Article.objects.filter(creator=self.request.user).order_by("-created_at")
-    #     else:
-    #         return Article.objects.none()
+    def get_queryset(self):
+        
+            return Article.objects.filter(creator=self.request.user).order_by("-created_at")
+        else:
+            return Article.objects.none()
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
