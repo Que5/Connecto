@@ -3,6 +3,7 @@ from typing import Any
 from django.contrib import messages
 from django.http import HttpRequest, HttpResponse
 from .models import Article
+from django.db.models.query import QuerySet
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView, DetailView
 from django.urls import reverse_lazy 
 from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
@@ -14,11 +15,10 @@ class ArticleListView(ListView):
     template_name = "app/home.html"
     paginate_by = 5
 
-    def get_queryset(self):
-        
-            return Article.objects.filter(creator=self.request.user).order_by("-created_at")
-        else:
-            return Article.objects.none()
+    def get_queryset(self) -> QuerySet[Any]:
+        queryset = super().get_queryset().filter(creator=self.request.user)
+        return queryset.order_by("-created_at")
+     
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
