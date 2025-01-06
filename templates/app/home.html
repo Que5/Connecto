@@ -19,6 +19,12 @@
 
     <h2 class="subtitle mb-6">Your latest articles</h2>
 
+    <form method="GET">
+        <input type="search" name="search" placeholder="Search articles" value="{{ request.GET.get('search') }}">
+        <button type="submit">Search</button>
+    </form>
+
+
     {% if article_list %}
     <ul>
         {% for article in article_list %}
