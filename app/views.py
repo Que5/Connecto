@@ -17,7 +17,7 @@ class ArticleListView(ListView):
 
     def get_queryset(self) -> QuerySet[Any]:
         search = self.request.GET.get("search")
-        queryset = super().get_queryset().filter(creator=self.request.user)
+        queryset = super().get_queryset().filter(creator=self.request.user.id)
         if search:
             queryset = queryset.filter(title__search=search)
         return queryset.order_by("-created_at")
