@@ -1,5 +1,5 @@
 from typing import Any
-
+import time
 from django.contrib import messages
 from django.http import HttpRequest, HttpResponse
 from .models import Article
@@ -16,12 +16,12 @@ class ArticleListView(ListView):
     paginate_by = 5
 
     def get_queryset(self) -> QuerySet[Any]:
+        time.sleep(2)
         search = self.request.GET.get("search")
         queryset = super().get_queryset().filter(creator=self.request.user.id)
         if search:
             queryset = queryset.filter(title__search=search)
         return queryset.order_by("-created_at")
-     
 
 
 class ArticleCreateView(LoginRequiredMixin, CreateView):
